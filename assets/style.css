@@ -1,0 +1,61 @@
+*,
+*:is(::before, ::after) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+:root {
+    --c-border: hsl(0, 0%, 10%);
+    --c-bg: hsl(0, 0%, 97%);
+    --gap: 4px;
+    font-family: sans-serif, system-ui;
+    color: var(--c-border);
+}
+
+body {
+    min-block-size: 100vh;
+}
+
+.bingo {
+    display: grid;
+    gap: var(--gap);
+    padding: var(--gap);
+    background-color: var(--c-border);
+    width: 600px;
+}
+
+.bingo__head {
+    height: 60px;
+    background-color: var(--c-bg);
+    letter-spacing: 0.25ch;
+}
+
+.bingo__row {
+    display: flex;
+    gap: var(--gap);
+    height: 60px;
+}
+
+.bingo__item {
+    display: grid;
+    place-content: center;
+    flex: 1;
+    background-color: var(--c-bg);
+    font-size: 2rem;
+}
+
+.bingo__item[data-bingo-bg] img {
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.center {
+    display: grid;
+    place-content: center;
+}
